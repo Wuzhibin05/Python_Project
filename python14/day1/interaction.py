@@ -36,3 +36,4 @@ Job:{2}
 Salary:{3}
 '''.format(name,age,job,salary)
 print(info3)
+
