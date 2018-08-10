@@ -1,6 +1,7 @@
 #!/usr/bin/emv python
 # -*- coding:utf-8 -*-
 # small ten
+
 University = {
     "北京大学": {
         "信息技术学院": {"计算机科学":{"计算机原理","数据结构","复变函数","通讯原理"},
