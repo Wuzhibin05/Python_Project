@@ -3,30 +3,47 @@
 # __author__ = "Wuzhibin"
 # Email: wuzhibin05@163.com
 # Date: 2018/8/20
+import os
+import json
 
-user_dict = {
-             "alex":{"passwd": "1q2w3e","lockTimes":0},
-             "wuzhibin":{"passwd": "1q2w3e","lockTimes":0},
-             "zhangsan":{"passwd": "1q2w3e","lockTimes":0}
-                                                        }
+if os.path.exists("userDetail.json"):
+    print("File exists!")
+else:
+    exit("Can't find any file named userDetail.json!")
+
+with open('userDetail.json', 'r', encoding='utf-8') as f:
+    user_dict = json.load(f)
 
 lock_time = 0
-
+remain_time = 3
 while True:
-    user_name = input("Please input username:")
-    if user_name in user_dict:
-        if user_dict[user_name]["lockTimes"] <= 2:
-            user_passwd = input("Please input your password:")
+    user_option = input("Please input your option:q is quit; l is login;")
+    if user_option == 'l':
+        user_name = input("Please input username:")
+        if user_name in user_dict:
+            if user_dict[user_name]["lockTimes"] <= 2:
+                user_passwd = input("Please input your password:")
 
-            if user_passwd == user_dict[user_name]["passwd"]:
-                lock_time = 0
-                user_dict[user_name]["lockTime"] = lock_time
-                print("Welcome to login on our system!")
+                if user_passwd == user_dict[user_name]["passwd"]:
+                    lock_time = 0
+                    user_dict[user_name]["lockTime"] = lock_time
+                    with open('userDetail.json', 'w', encoding='utf-8') as f:
+                        f.write(json.dumps(user_dict))
+                    print("Welcome to login on our system!")
+
+                else:
+                    lock_time += 1
+                    remain_time -= lock_time
+                    user_dict[user_name]["lockTime"] = lock_time
+                    with open('userDetail.json', 'w', encoding='utf-8') as f:
+                        f.write(json.dumps(user_dict))
+
+                    print("Your password is not correct,please check,you only have")
             else:
-                lock_time += 1
-                user_dict[user_name]["lockTime"] = lock_time
-                print("Your password is not correct,please check!")
+                exit("You account is locked,Bye bye!")
         else:
-            exit("You account is locked,Bye bye!")
+            print("Invalid username")
+    elif user_option == 'q':
+        exit("Welcome to login next time!")
     else:
-        print("Invalid username")
+        print("Invalid input!")

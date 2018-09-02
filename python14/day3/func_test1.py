@@ -16,4 +16,10 @@ print('from func1 return is %s' %x)
 print('from func2 return is %s' %y)
 
 
-
+hehe=6
+def f():
+    global hehe
+    print(hehe)
+    hehe=3
+f()
+print(hehe)
