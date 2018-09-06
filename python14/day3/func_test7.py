@@ -20,7 +20,6 @@ __author__ = "Alex Li"
 #     print(kwargs['name'])
 #     print(kwargs['age'])
 #     print(kwargs['sex'])
-#
 # test2(name='alex',age=8,sex='F')
 # test2(**{'name':'alex','age':8})
 # def test3(name,**kwargs):
@@ -35,17 +34,8 @@ __author__ = "Alex Li"
 #     print(kwargs)
 #
 # test4('alex',age=34,sex='m',hobby='tesla')
-
-def test4(name,age=18,*args,**kwargs):
-    print(name)
-    print(age)
-    print(args)
-    print(kwargs)
-    logger("TEST4")
-
-
-
-def logger(source):
-    print("from %s" %  source)
-
-test4('alex',age=34,sex='m',hobby='tesla')
+#
+#
+res = map(lambda x:x**2,[1,5,7,4,8])
+for i in res:
+    print(i)
