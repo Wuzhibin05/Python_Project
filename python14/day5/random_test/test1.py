@@ -9,3 +9,4 @@ for i in range(5):
         tmp=random.randint(0,9)
     checkcode+=str(tmp)
 print(checkcode)
+print(type(checkcode))
