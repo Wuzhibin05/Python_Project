@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # Author:Bruce wu
 # Date: $(DATE)
+
 # 需求：使用while循环输入1到10
 
 count = 0
