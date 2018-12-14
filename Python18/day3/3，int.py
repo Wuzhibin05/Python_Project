@@ -1,5 +1,8 @@
 i = 100
+j = 1000
 print(i.bit_length())
+print(j.bit_length())
+
 '''
                   bit_length
 1     0000 0001       1

@@ -37,13 +37,15 @@ print(s15)
 
 #字符串的操作
 s = 'alexWUsir'
-s1 = s.capitalize()  # 首字母大写
+s1 = s.capitalize()  # 首字母大写,其他全部变小写
 # print(s1)
 
 # 全大写，全小写
 s2 = s.upper()
 s21 = s.lower()
 # print(s2,s21)
+
+
 '''
 s_str= 'acEQ1'
 you_input =input('请输入验证码，不区分大小写')
@@ -52,10 +54,11 @@ if s_str.upper() == you_input.upper():
 else:
     print('请重新输入')
 '''
+
 #大小写翻转
 # s3 = s.swapcase()
 # print(s3)
-# 每个隔开(特殊字符或者数字)的单词首字母大写
+# # 每个隔开(特殊字符或者数字)的单词首字母大写
 # s = 'alex*egon-wusir'
 # s4 = s.title()
 # print(s4)
@@ -92,10 +95,10 @@ print(s7)
 # find 通过元素找索引，找不到返回-1
 #
 # index通过元素找索引，找不到报错
-# s = 'alexWUsir'
-# s8 = s.find('A')
-# s81 = s.index('A')
-# print(s81,type(s8))
+s = 'alexWUsir'
+s8 = s.find('A')
+s81 = s.index('A')
+print(s81,type(s8))
 
 #strip rstrip lstrip
 # s = 'alexWUsir%'
