@@ -17,18 +17,18 @@
 # print(sum)
 
 # #计算 1 - 2 + 3 ... -99 中除了88意外所有数的总和
-i=0
-j=-1
-sum=0
-while i<99:
-    i=i+1
-    if i==88:
-        continue
-    else:
-        j = -j
-        sum=sum+i*j
-
-print(sum)
+# i=0
+# j=-1
+# sum=0
+# while i<99:99
+#     i=i+1
+#     if i==88:
+#         continue
+#     else:
+#         j = -j
+#         sum=sum+i*j
+#
+# print(sum)
 #
 # sum=sum+i
 #

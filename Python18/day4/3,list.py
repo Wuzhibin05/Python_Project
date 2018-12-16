@@ -87,7 +87,14 @@ li = ['taibai','武藤兰','苑昊',['alex','egon',89],23]
 # print(li)
 
 
+l1 = ["wuzb","test","dev","ce"]
+while True:
+    name = input("请输入你要增加的姓名,如果要退出请输入q:")
 
+    if name.strip().upper() == "Q":
+        break
+    l1.append(name)
+    print(l1)
 
 
 

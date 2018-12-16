@@ -33,15 +33,25 @@
 # for i in range(10,-1,-2):
 #     print(i)
 
-li = [1,2,3,5,'alex',[2,3,4,5,'taibai'],'afds']
+# li = [1,2,3,5,'alex',[2,3,4,5,'taibai'],'afds']
 # for i in li:
 #     if type(i) == list:
 #         for k in i:
 #             print(k)
 #     else:print(i)
 
+# for i in range(len(li)):
+#     if type(li[i]) == list:
+#         for j in li[i]:
+#             print(j)
+#     else:print(li[i])
+#
+#
+
+li = [1,2,3,5,'alex',[2,3,4,5,'taibai'],'afds']
 for i in range(len(li)):
-    if type(li[i]) == list:
+    if  type(li[i]) == list:
         for j in li[i]:
             print(j)
-    else:print(li[i])
+    else:
+        print(li[i])

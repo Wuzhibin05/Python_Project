@@ -49,5 +49,5 @@ while i < 3:
     if username == '咸鱼哥' and password == 123:
         print('登录成功')
     else:
-        print('登录失败请重新登录')
+        print('登录失败请重新11登录')
     i += 1

@@ -45,8 +45,13 @@ while i < 3:
         print("欢迎登陆系统，%s!"%user)
         break
     else:
-        i +=1
-        print("用户名或者密码错误，你还有%s次机会！"%(times-i))
+        i += 1
+        if i < 3:
+            print("用户名或者密码错误，你还有%s次机会！"%(times-i))
+        else:
+            choice = input("你已经没有机会了，想再试试吗?请输入Y:")
+            if choice == 'Y':
+                i =0
 else:
     print("你已经被强制退出！")
 
