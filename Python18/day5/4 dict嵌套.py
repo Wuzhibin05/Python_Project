@@ -19,10 +19,10 @@ dic = {
 # dic['py9']['female'] = 6
 # print(dic)
 
-# fhdklah123rfdj12fdjsl3    '       123     12    13'
-info = input('>>>').strip()
+#  找出字符串中的数字，并计算个数:fhdklah123rfdj12fdjsl3    '       123     12    13'
+info = input(">>>")
 for i in info:
     if i.isalpha():
-        info = info.replace(i," ")
-l = info.split()
-print(len(l))
+        info = info.replace(i, " ")
+l1 = info.split()
+print(l1, len(l1))
