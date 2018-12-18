@@ -8,11 +8,18 @@ str  int
 '''
 list:
 '''
+str
+
 lis = [11,22,33,44,55]
 # for i in range(len(lis)):
 #     print(i)       # i = 0              i = 1               i = 2
 #     del lis[i]
 #     print(lis)  #  [11,22,33,44,55]   [22, 44, 55]          [22, 44]
+
+# lis =lis[::2]
+# print(lis)
+
+
 
 #第一种
 # lis = lis[::2]
@@ -34,8 +41,8 @@ lis = [11,22,33,44,55]
 # #         print(lis)
 # # print(lis)
 
-# dic = dict.fromkeys([1,2,3],'春哥')
-# print(dic)
+dic = dict.fromkeys([1,2,3],"春哥")
+print(dic)
 # dic = dict.fromkeys([1,2,3],[])
 # print(dic)  # {1: [], 2: [], 3: []}
 # dic[1].append('袁姐')
@@ -44,11 +51,11 @@ lis = [11,22,33,44,55]
 # print(dic)
 
 
-# l1 = []
-# l2 = l1
-# l3 = l1
-# l3.append('a')
-# print(l1,l2,l3)
+l1 = []
+l2 = l1
+l3 = l1
+l3.append('a')
+print(l1,l2,l3)
 
 # dic = {'k1':'v1','k2':'v2','a3':'v3'}
 # dic1 = {}
