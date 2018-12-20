@@ -46,7 +46,7 @@ for i in zhubo.keys():
 for i in del_zhubo:
     zhubo.pop(i)
 zhubo.pop('卢本伟')
-print(avg_salary)
+print(avg_salary11)
 print(zhubo)
 
 
