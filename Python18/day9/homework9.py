@@ -58,6 +58,24 @@ print(count(*s))
 
 # 6，写函数，接收两个数字参数，返回比较大的那个数字。
 
+def bigger(x,y):
+    if x > y:
+        return x
+    else:
+        return y
 
+print(bigger(5,y=100))
 
+# 7,写函数，检查传入字典的每一个value的长度,如果大于2，那么仅保留前两个长度的内容，并将新内容返回给调用者。
+dic = {"k1": "v1v1", "k2": [11,22,33,44]}
+def get_values(**kwargs):
+    lst = []
+    for i in kwargs.values():
+        if len(i)>2:
+            lst.append(i[:2])
+    return lst
+print(get_values(**dic))
+
+'''8，写函数，此函数只接收一个参数且此参数必须是列表数据类型，此函数完成的功能是返回给调用者一个字典，
+# 此字典的键值对为此列表的索引及对应的元素。例如传入的列表为：[11,22,33] 返回的字典为 {0:11,1:22,2:33}。'''
 
