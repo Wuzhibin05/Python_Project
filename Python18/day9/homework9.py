@@ -59,6 +59,9 @@ print(count(*s))
 # 6，写函数，接收两个数字参数，返回比较大的那个数字。
 
 def bigger(x,y):
+    """
+    比较两个数的大小，返回大的
+    """
     if x > y:
         return x
     else:
@@ -69,6 +72,10 @@ print(bigger(5,y=100))
 # 7,写函数，检查传入字典的每一个value的长度,如果大于2，那么仅保留前两个长度的内容，并将新内容返回给调用者。
 dic = {"k1": "v1v1", "k2": [11,22,33,44]}
 def get_values(**kwargs):
+    """
+    function: truncate the first two values of the dict.
+    Returns: list
+    """
     lst = []
     for i in kwargs.values():
         if len(i)>2:
@@ -76,6 +83,109 @@ def get_values(**kwargs):
     return lst
 print(get_values(**dic))
 
-'''8，写函数，此函数只接收一个参数且此参数必须是列表数据类型，此函数完成的功能是返回给调用者一个字典，
-# 此字典的键值对为此列表的索引及对应的元素。例如传入的列表为：[11,22,33] 返回的字典为 {0:11,1:22,2:33}。'''
+"""
+8，写函数，此函数只接收一个参数且此参数必须是列表数据类型，此函数完成的功能是返回给调用者一个字典，
+此字典的键值对为此列表的索引及对应的元素。例如传入的列表为：[11,22,33] 返回的字典为 {0:11,1:22,2:33}。
+"""
+lst1 = [11,22,44,44,12,433,[12421,123]]
+def transform(*args):
+    """
+    transform list to dict
+    """
+    dic1 = {}
+    if len(args) != 0:
+        for index,i in enumerate(args):
+            dic1[index]= i
+    return dic1
+print(transform(*lst1))
 
+
+"""9，写函数，函数接收四个参数分别是：姓名，性别，年龄，学历。用户通过输入这四个内容，然后将这四个内容传入到函数中，
+此函数接收到这四个内容，将内容追加到一个student_msg文件中。"""
+
+# def format_message(**kwargs):
+#
+#     with open('student_msg.txt', mode='a+',encoding='utf-8') as f:
+#         f.write("开始写入数据 ".center(50,"-")+"\n")
+#         f.write("name:%s \n" %kwargs["name"])
+#         f.write("sex:%s \n"%kwargs["sex"])
+#         f.write("age:%s \n"%kwargs["age"])
+#         f.write("education:%s \n"%kwargs["education"])
+#
+# username = input("Please input your name:")
+# sex = input("Please input your sex:")
+# age = input("Please input your age:")
+# education = input("Please input your education:")
+# dic2 = {}
+# dic2["name"] = username
+# dic2["sex"] = sex
+# dic2["age"] = age
+# dic2["education"] = education
+# print(format_message(**dic2))
+
+
+'''10，对第9题升级：支持用户持续输入，Q或者q退出，性别默认为男，如果遇到女学生，则把性别输入女。'''
+# def format_message(sex = "男",**kwargs):
+#     """
+#     将用户输入的姓名，性别，年龄和学习追加写入到文件。
+#     """
+#     with open('student_msg.txt', mode='a+',encoding='utf-8') as f:
+#         f.write("开始写入数据 ".center(50,"-")+"\n")
+#         f.write("name:%s \n" %kwargs["name"])
+#         f.write("sex:%s \n"%sex)
+#         f.write("age:%s \n"%kwargs["age"])
+#         f.write("education:%s \n"%kwargs["education"])
+# while True:
+#     print("If you want to quit,please input 'q'or'Q':".center(80,'='))
+#     username = input("Please input your name:").strip()
+#     if username.upper() == "Q":
+#         break
+#     sex = input("Please input your sex:").strip()
+#     if sex.upper() == "Q":
+#         break
+#     age = input("Please input your age:").strip()
+#     if age.upper() == "Q":
+#         break
+#     education = input("Please input your education:").strip()
+#     if education.upper() == "Q":
+#         break
+#     dic2 = {}
+#     dic2["name"] = username
+#     dic2["age"] = age
+#     dic2["education"] = education
+#     if sex == "女":
+#         print(format_message(sex = "女",**dic2))
+#     else:
+#         print(format_message(**dic2))
+
+'''11，写函数，用户传入修改的文件名，与要修改的内容，执行函数，完成整个文件的批量修改操作（升级题）。'''
+import os
+def modify_file(file,s):
+    s2 = input("请输入你要修改后的内容:").strip()
+    with open(file, mode='r',encoding='utf-8') as f,open(file+'.bak',mode='w+',encoding = 'utf-8') as f2:
+        for line in f:
+            if s in line:
+                line.replace(s,s2)
+                f2.write(line)
+                continue
+            else:
+                f2.write(line)
+    os.remove(file)
+    os.rename(file+".bak",file)
+filename = 'student_msg.txt'
+s1= input("请输入你想要修改的内容:").strip()
+modify_file(filename,s1)
+
+
+'''12，写一个函数完成三次登陆功能：(升级题, 两天做完)
+(1)用户的用户名密码从一个文件register中取出。
+(2)register文件包含多个用户名，密码，用户名密码通过 | 隔开，每个人的用户名密码占用文件中一行。
+(3)完成三次验证，三次验证不成功则登录失败，登录失败返回False。
+(4)登陆成功返回True。
+'''
+'''13，再写一个函数完成注册功能：(升级题, 两天做完)
+(1)用户输入用户名密码注册。
+(2)注册时要验证（文件regsiter中）用户名是否存在，如果存在则让其重新输入用户名，如果不存在，则注册成功。
+(3)注册成功后，将注册成功的用户名，密码写入regsiter文件，并以 | 隔开。
+(4)注册成功后，返回True, 否则返回False。
+'''
