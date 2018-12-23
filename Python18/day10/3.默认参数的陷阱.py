@@ -1,3 +1,12 @@
+# 陷阱一：默认参数是一个空的列表
+def defult_param(a,l = []):
+    l.append(a)
+    return l
+
+print(defult_param('alex'))
+print(defult_param('wuzhibin',l=[]))
+print(defult_param('egon'))
+# 陷阱二：默认参数是一个空的字典
 def qqxing(k,l = {}):
     # l.append(1)
     l[k] = 'v'
