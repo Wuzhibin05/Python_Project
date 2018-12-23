@@ -20,6 +20,6 @@ age:age
 education:123 
 ---------------------开始写入数据 ----------------------
 name:alex 
-sex:女 
+sex:男 
 age:24 
 education:大学 

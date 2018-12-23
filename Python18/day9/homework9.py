@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-# __author__ = "Wuzhibin"
+# __author__ = "Wu zhi bin"
 # Email: wuzhibin05@163.com
 # Date: 2018/12/20
 
@@ -161,18 +161,20 @@ print(transform(*lst1))
 '''11，写函数，用户传入修改的文件名，与要修改的内容，执行函数，完成整个文件的批量修改操作（升级题）。'''
 import os
 def modify_file(file,s):
+    new_line = ''
     s2 = input("请输入你要修改后的内容:").strip()
     with open(file, mode='r',encoding='utf-8') as f,open(file+'.bak',mode='w+',encoding = 'utf-8') as f2:
         for line in f:
             if s in line:
-                line.replace(s,s2)
-                f2.write(line)
+                new_line =line.replace(s,s2)
+                f2.write(new_line)
                 continue
-            else:
-                f2.write(line)
+            f2.write(line)
+            print(line)
+    # 判断文件是否 文件是否存在并替换。
     os.remove(file)
     os.rename(file+".bak",file)
-filename = 'student_msg.txt'
+filename = 'student_msg1.txt'
 s1= input("请输入你想要修改的内容:").strip()
 modify_file(filename,s1)
 
