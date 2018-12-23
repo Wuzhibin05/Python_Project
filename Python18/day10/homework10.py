@@ -40,7 +40,16 @@ print(cal(8))
 
 #例如：[(‘红桃’，2),(‘梅花’，2), …(‘黑桃’，‘A’)]
 
-
+def card():
+    list1 = [2,3,4,5,6,7,8,9,10,'A','J','Q','K']
+    list2 = ['黑桃','红桃',"梅花","方块"]
+    card1 = []
+    for i in list2:
+        for j in list1:
+            a = (i,j)
+            card1.append(a)
+    return card1
+print(card())
 #4，有如下函数:
 
 # def wrapper():
@@ -48,7 +57,20 @@ print(cal(8))
 #         print(666)
 # wrapper()
 # 你可以任意添加代码,用两种或以上的方法,执行inner函数.
-#
+
+# def wrapper():
+#     def inner():
+#         print(666)
+#     return inner()
+# wrapper()
+
+def wrapper():
+    def inner():
+        print(666)
+    return inner()
+wrapper()
+
+
 # 5，相关面试题（先从纸上写好答案，然后在运行）：
 #
 # 5.1，有函数定义如下：
