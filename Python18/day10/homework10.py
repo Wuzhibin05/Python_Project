@@ -75,26 +75,26 @@ wrapper()
 #
 # 5.1，有函数定义如下：
 #
-# def calc(a,b,c,d=1,e=2):
-#     return (a+b)*(c-d)+e
+def calc(a,b,c,d=1,e=2):
+    return (a+b)*(c-d)+e
 # # 请分别写出下列标号代码的输出结果，如果出错请写出Error。
-# print(calc(1,2,3,4,5))_____
-# print(calc(1,2))____
-# print(calc(e=4,c=5,a=2,b=3))___
-# print(calc(1,2,3))_____
-# print(calc(1,2,3,e=4))____
-# print(calc(1,2,3,d=5,4))_____
-# 5.2，下面代码打印的结果分别是_list1= ,list2= ,list3= .
+# print(calc(1,2,3,4,5)) # 2
+# print(calc(1,2)) # error
+# print(calc(e=4,c=5,a=2,b=3)) #
+# print(calc(1,2,3)) #
+# print(calc(1,2,3,e=4)) #
+# print(calc(1,2,3,d=5,4)) # error
+# 5.2，下面代码打印的结果分别是 list1= ,list2= ,list3= .
 #
-# def extendList(val,list=[]):
-#     list.append(val)
-#     return list
-# list1 = extendList(10)
-# list2 = extendList(123,[])
-# list3 = extendList('a')
-# print('list1=%s'%list1)
-# print('list2=%s'%list2)
-# print('list3=%s'%list3)
+def extendList(val,list=[]):
+    list.append(val)
+    return list
+list1 = extendList(10)
+list2 = extendList(123,[])
+list3 = extendList('a')
+print('list1=%s'%list1) # 10,'a'
+print('list2=%s'%list2) #123
+print('list3=%s'%list3) # 10,'a'
 # 5.3，写代码完成99乘法表.(升级题)
 #
 # * 1 = 1
@@ -102,3 +102,14 @@ wrapper()
 # * 1 = 3 3 * 2 = 6 3 * 3 = 9
 # ......
 # * 1 = 9 9 * 2 = 18 9 * 3 = 27 9 * 4 = 36 9 * 5 = 45 9 * 6 = 54 9 * 7 = 63 9 * 8 = 72 9 * 9 = 81
+
+
+def multiplacation():
+    """乘法口诀表"""
+    list =[1,2,3,4,5,6,7,8,9]
+    for  i in  range(1,10):
+        for j in range(1,10):
+            if j <= i:
+                print("%s*%s=%s"%(i,j,i*j),end=' ')
+        print( )
+multiplacation()
