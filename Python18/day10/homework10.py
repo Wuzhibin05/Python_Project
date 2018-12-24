@@ -1,115 +1,114 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Author:Bruce wu
-# Date: 2018/12/23
+# Date: 2018/12/24
+#
+# 1, 继续整理函数相关知识点，写博客。
+#
+# 2, 写函数，接收n个数字，求这些参数数字的和。（动态传参）
 
-# 1，写函数，传入n个数，返回字典{‘max’:最大值,’min’:最小值}
+def cal(*args):
+    sum = 0
+    for i in args:
+        sum +=i
+    return sum
+list1 = [1,2,55,33,22,34,123,442,332,1124,23,2]
+print(cal(*list1))
+#
+# ### 3,读代码，回答：代码中,打印出来的值a,b,c分别是什么？为什么？
 
-#如:min_max(2,5,7,8,4) 返回:{‘max’:8,’min’:2}(此题用到max(),min()内置函数)
-def min_max(*args):
-    dict1 = {}
+# a=10
+# b=20
+# def test5(a,b):
+#          print(a,b)
+# c = test5(b,a)
+# print(c) # a=20 b=10 c=None
+
+#
+# ### 4,读代码，回答：代码中,打印出来的值a,b,c分别是什么？为什么？
+
+# a=10
+# b=20
+# def test5(a,b):
+#     a=3
+#     b=5
+#     print(a,b)
+# c = test5(b,a)
+# print(c) # a=3 b=5 c=None
+
+"""5,写函数,传入函数中多个实参(均为可迭代对象如字符串,列表,元祖,集合等),将每个实参的每个元素依次添加到函数的动态参数args里面.
+     例如:传入函数两个参数[1,2,3] (22,33)最终args为(1,2,3,22,33)"""
+def joindata(*args):
+    new_args = []
     for i in range(len(args)):
-        if  i == 1:
-            dict1["max"] = max(args[i],args[i-1])
-            dict1["min"] = min(args[i],args[i-1])
-        elif i > 0:
-            dict1["max"] = max(args[i],dict1["max"])
-            dict1["min"] = min(args[i],dict1["min"])
-    return dict1
-list1 =[1,2,13,33,44,22,-1,-200,+2000,-222,22,55]
-print(min_max(*list1))
-
-# 2，写函数，传入一个参数n，返回n的阶乘
-
-#例如:cal(7) 计算7654321
-
-def cal(num):
-    """计算自然数的阶乘"""
-    sum = 1
-    if num == 0 and num == 1:
-        return 1
-    elif num >1:
-        for i in range(2,num+1):
-            sum *=i
-        return sum
-
-print(cal(8))
-
-
-#3，写函数，返回一个扑克牌列表，里面有52项，每一项是一个元组
-
-#例如：[(‘红桃’，2),(‘梅花’，2), …(‘黑桃’，‘A’)]
-
-def card():
-    list1 = [2,3,4,5,6,7,8,9,10,'A','J','Q','K']
-    list2 = ['黑桃','红桃',"梅花","方块"]
-    card1 = []
-    for i in list2:
-        for j in list1:
-            a = (i,j)
-            card1.append(a)
-    return card1
-print(card())
-#4，有如下函数:
-
+        if type(i) == set:
+            i = list(i)
+            for j in range(len(i)):
+               new_args.append(i[j])
+        else:
+            for j in range(len(i)):
+               new_args.append(i[j])
+list2 = ['abad',{1,2,3,4},(1,'a','cd'),['a','b',1,'ab']]
+print(joindata(*list2))
+# ### 6,写函数,传入函数中多个实参(实参均为字典),将每个实参的键值对依次添加到函数的动态参数kwargs里面.
+# 例如 传入函数两个参数{‘name’:’alex’} {‘age’:1000}最终kwargs为{‘name’:’alex’ ,‘age’:1000}
+# ### ### 7, 下面代码成立么?如果不成立为什么报错?怎么解决?
+# ### 7.1
+# ```python
+#     a = 2
+#     def wrapper():
+#             print(a)
+#     wrapper()
+# ```
+#
+# ### 7.2
+# ```python
+#     a = 2
+#     def wrapper():
+#             a += 1
+#         print(a)
+#     wrapper()
+# ```
+# ### 7.3
+# ```python
 # def wrapper():
-#     def inner():
-#         print(666)
-# wrapper()
+#         a = 1
+#         def inner():
+#             print(a)
+#         inner()
+#     wrapper()
+# ```
+# ### 7.4
+# ```python
+# def wrapper():
+#         a = 1
+#         def inner():
+#             a += 1
+#             print(a)
+#         inner()
+#     wrapper()
+# ```
+#
+# ### 8，写函数,接收两个数字参数,将较小的数字返回.
+#
+# ### 9，写函数,接收一个参数(此参数类型必须是可迭代对象),将可迭代对象的每个元素以’_’相连接,形成新的字符串,并返回.
+# 例如 传入的可迭代对象为[1,'老男孩','武sir']返回的结果为’1_老男孩_武sir’
+#
+# ### 10,写函数，传入n个数，返回字典{‘max’:最大值,’min’:最小值}
+# 例如:min_max(2,5,7,8,4) 返回:{‘max’:8,’min’:2}(此题用到max(),min()内置函数)
+#
+# ### 11,写函数，传入一个参数n，返回n的阶乘
+# 例如:cal(7)  计算7*6*5*4*3*2*1
+#
+# ### 12写函数，返回一个扑克牌列表，里面有52项，每一项是一个元组（升级题）
+# 例如：[(‘红心’，2),(‘草花’，2), …(‘黑桃’，‘A’)]
+# 有如下函数:
+# ```python
+# def wrapper():
+#         def inner():
+#             print(666)
+#     wrapper()
+# ```
+#
 # 你可以任意添加代码,用两种或以上的方法,执行inner函数.
 
-# def wrapper():
-#     def inner():
-#         print(666)
-#     return inner()
-# wrapper()
-
-def wrapper():
-    def inner():
-        print(666)
-    return inner()
-wrapper()
-
-
-# 5，相关面试题（先从纸上写好答案，然后在运行）：
-#
-# 5.1，有函数定义如下：
-#
-def calc(a,b,c,d=1,e=2):
-    return (a+b)*(c-d)+e
-# # 请分别写出下列标号代码的输出结果，如果出错请写出Error。
-# print(calc(1,2,3,4,5)) # 2
-# print(calc(1,2)) # error
-# print(calc(e=4,c=5,a=2,b=3)) #
-# print(calc(1,2,3)) #
-# print(calc(1,2,3,e=4)) #
-# print(calc(1,2,3,d=5,4)) # error
-# 5.2，下面代码打印的结果分别是 list1= ,list2= ,list3= .
-#
-def extendList(val,list=[]):
-    list.append(val)
-    return list
-list1 = extendList(10)
-list2 = extendList(123,[])
-list3 = extendList('a')
-print('list1=%s'%list1) # 10,'a'
-print('list2=%s'%list2) #123
-print('list3=%s'%list3) # 10,'a'
-# 5.3，写代码完成99乘法表.(升级题)
-#
-# * 1 = 1
-# * 1 = 2 2 * 2 = 4
-# * 1 = 3 3 * 2 = 6 3 * 3 = 9
-# ......
-# * 1 = 9 9 * 2 = 18 9 * 3 = 27 9 * 4 = 36 9 * 5 = 45 9 * 6 = 54 9 * 7 = 63 9 * 8 = 72 9 * 9 = 81
-
-
-def multiplacation():
-    """乘法口诀表"""
-    list =[1,2,3,4,5,6,7,8,9]
-    for  i in  range(1,10):
-        for j in range(1,10):
-            if j <= i:
-                print("%s*%s=%s"%(i,j,i*j),end=' ')
-        print( )
-multiplacation()
