@@ -32,5 +32,20 @@ i = outer()
 i()
 
 
+# 三目运算符（比较和y中较大的一个）
+x, y = 1, 4
+if (x>y):
+    print(x)
+else:
+    print(y)
+
+print(x if (x>y) else y)
+
+# 比较x y z 中较大的一个
+z = 10
+
+print((x if (x>y) else y) if ((x if (x>y) else y)>z) else z)
 
 
+a = (x if (x>y) else y)
+print(a if a>z else z)

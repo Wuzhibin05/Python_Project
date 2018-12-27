@@ -1,14 +1,18 @@
-#元祖 只读列表，可循环查询，可切片。
+#元祖 ：只读列表，可循环查询，可切片。
 #儿子不能改，孙子可能可以改。
-# tu = (1,2,3,'alex',[2,3,4,'taibai'],'egon')
-# # print(tu[3])
-# # print(tu[0:4])
-# # for i in tu:
-# #     print(i)
-# tu[4][3]=tu[4][3].upper()
-# print(tu)
-# tu[4].append('sb')
-# print(tu)
+
+tu = (1,2,3,'alex',[2,3,4,'taibai'],'egon')
+# 1，索引
+print(tu[3])
+# 2，切片
+print(tu[0:4])
+# 3，循环
+for i in tu:
+    print(i)
+# 4,孙子是可变数据类型修改。
+tu[4][3]=tu[4][3].upper()
+tu[4].append('sb')
+print(tu)
 
 # s = 'alex'
 # s1 = 'sb'.join(s)
@@ -48,10 +52,10 @@
 #
 #
 
-li = [1,2,3,5,'alex',[2,3,4,5,'taibai'],'afds']
-for i in range(len(li)):
-    if  type(li[i]) == list:
-        for j in li[i]:
-            print(j)
-    else:
-        print(li[i])
+# li = [1,2,3,5,'alex',[2,3,4,5,'taibai'],'afds']
+# for i in range(len(li)):
+#     if  type(li[i]) == list:
+#         for j in li[i]:
+#             print(j)
+#     else:
+#         print(li[i])

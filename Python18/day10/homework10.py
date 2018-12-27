@@ -50,6 +50,7 @@ def joindata(*args):
                new_args.append(i[j])
 list2 = ['abad',{1,2,3,4},(1,'a','cd'),['a','b',1,'ab']]
 print(joindata(*list2))
+
 # ### 6,写函数,传入函数中多个实参(实参均为字典),将每个实参的键值对依次添加到函数的动态参数kwargs里面.
 # 例如 传入函数两个参数{‘name’:’alex’} {‘age’:1000}最终kwargs为{‘name’:’alex’ ,‘age’:1000}
 # ### ### 7, 下面代码成立么?如果不成立为什么报错?怎么解决?
