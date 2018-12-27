@@ -1,5 +1,5 @@
 #元祖 ：只读列表，可循环查询，可切片。
-#儿子不能改，孙子可能可以改。
+#      儿子不能改，孙子可能可以改。
 
 tu = (1,2,3,'alex',[2,3,4,'taibai'],'egon')
 # 1，索引
@@ -14,14 +14,14 @@ tu[4][3]=tu[4][3].upper()
 tu[4].append('sb')
 print(tu)
 
-# s = 'alex'
-# s1 = 'sb'.join(s)
-# print(s1)
-#列表转化成字符串  list -----> str    join
-# li = ['taibai','alex','wusir','egon','女神',]
-# s = '++++'.join(li)
-#str ----->list   split()
-# print(s)
+# 列表转化成字符串:list -----> str    join
+# 字符串转换为列表：str ----->list   split()
+
+li = ['taibai','alex','wusir','egon','女神',]
+s = '.'.join(li)
+t = s.split('.')
+print(s)
+print(t)
 
 
 #range  [1,2,3,4,5,6,.......100........]
