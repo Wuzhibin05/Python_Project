@@ -1,19 +1,21 @@
-#len
-# s = '金老板小护士'
-# len(s)
-# def my_len():  #自定义函数
-#     i = 0
-#     for k in s:
-#         i += 1
-#     print(i)
-#
-# length = my_len()
-# print(length)
+# len测试字符串长度
+s = '金老板小护士'
+len(s)
+
+# 使用函数来测试
+def my_len():  #自定义函数
+    i = 0
+    for k in s:
+        i += 1
+    print(i)
+length = my_len()
+print(length)
+
 # 函数
 # 定义了之后，可以在任何需要它的地方调用
 # 没有返回长度，只是单纯的打印
 
-#返回的重要性
+#返回的重要性，内置函数没法修改，自定义函数可以修改。
 #a,b
 #len(a)  #内置函数
 #len(b)
@@ -44,27 +46,44 @@
     # 返回多个值
         # 用多个变量接收：有多少返回值就用多少变量接收
         # 用一个变量接收: 得到的是一个元组
+# 1，return None
+def func1():
+    l = ['金老板','二哥']
+    for i in l:
+        print(i)
+        if i=='金老板':
+            return None
+    print('='*10)
+ret = func1()
+print(ret)
+# 2，不写返回值
+def func2():
+    print('爱你')
+print(func2())
 
-# def func():
-#     l = ['金老板','二哥']
-#     for i in l:
-#         print(i)
-#         if i=='金老板':
-#             return None
-#     print('='*10)
-# ret = func()
-# print(ret)
+# 3，只写return
+def func3():
+    return
+print(func3())
 
-# def func():
-#     return {'k':'v'}
-# print(func())
+# 有一个返回值
+def func2():
+    return 1
+r= func2()
+print(r)
 
-# def func2():
-#     return 1,2,3  #return 1,2,3
-#
-# r= func2()
-# print(r)
+# 有多个返回值
 
+def func2():
+    return 1,2,3  #return 1,2,3
+r= func2()
+print(r)
+
+# 有多个返回值,用多个变量接收。数量要和返回值个数一样否则报错
+def func2():
+    return 1,2,3  #return 1,2,3
+a,b,c= func2()
+print(a,b,c)
 
 # def my_len(s):  #自定义函数只需要0个参数，接收参数,形式参数，形参
 #     i = 0
@@ -116,13 +135,13 @@
 #站在形参的角度上
     #位置参数：必须传,且有几个参数就传几个值
     #默认参数: 可以不传，如果不传就是用默认的参数，如果传了就用传的
-# def classmate(name,sex='男'):
-#     print('%s : %s'%(name,sex))
-#
-# classmate('二哥')
-# classmate('小孟')
-# classmate('大猛')
-# classmate('朗哥','女')
+def classmate(name,sex='男'):
+    print('%s : %s'%(name,sex))
+
+classmate('二哥')
+classmate('小孟')
+classmate('大猛')
+classmate('朗哥','女')
 
 #只有调用函数的时候
     #按照位置传 ： 直接写参数的值
@@ -136,17 +155,17 @@
                 #参数名之前加**，习惯参数名kwargs
     #顺序：位置参数，*args,默认参数,**kwargs
 
-# def classmate(name,sex):
-#     print('%s : %s'%(name,sex))
-#
-# classmate('二哥','男')
-# classmate(sex='男',name = '二哥')
+def classmate(name,sex):
+    print('%s : %s'%(name,sex))
 
-# def classmate(name,sex='男'):
-#     print('%s : %s'%(name,sex))
-#
-# classmate('二哥')
-# classmate('朗哥',sex= '女')
+classmate('二哥','男')
+classmate(sex='男',name = '二哥')
+
+def classmate(name,sex='男'):
+    print('%s : %s'%(name,sex))
+
+classmate('二哥')
+classmate('朗哥',sex= '女')
 
 # def sum(*args):
 #     n = 0
