@@ -27,3 +27,5 @@
 # g = (i*i for i in range(10))
 # g.__next__()
 
+g = (i*i  for i in range(10))
+for i in  g: print(i)
