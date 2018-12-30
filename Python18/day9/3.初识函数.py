@@ -171,7 +171,7 @@ classmate('朗哥',sex= '女')
 #     n = 0
 #     for i in args:
 #         n+=i
-#     return n
+#     return name
 #
 # print(sum(1,2))
 # print(sum(1,2,3))
