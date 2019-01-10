@@ -11,10 +11,11 @@
 # dir()
 # id()
 # str()
-
-
-# print(locals())  #返回本地作用域中的所有名字
-# print(globals()) #返回全局作用域中的所有名字
+# l =[]
+a = 1
+# 返回本地作用域中的所有的人的名字
+# print(locals()) #返回本地作用域中的所有名字
+print(globals())#返回全局作用域中的所有名字
 # global 变量
 # nonlocal 变量
 
@@ -149,9 +150,9 @@ import time
 # print(min(1,2,3,4))
 # print(min(1,2,3,-4))
 # print(min(1,2,3,-4,key = abs))
-
-print(max([1,2,3,4]))
-print(max(1,2,3,4))
-print(max(1,2,3,-4))
-print(max(1,2,3,-4,key = abs))
+#
+# print(max([1,2,3,4]))
+# print(max(1,2,3,4))
+# print(max(1,2,3,-4))
+# print(max(1,2,3,-4,key = abs))
 
