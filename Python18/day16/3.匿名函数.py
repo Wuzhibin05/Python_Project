@@ -1,15 +1,16 @@
-# def add(x,y):
-#     return x+y
 
-# add = lambda x,y:x+y
-# print(add(1,2))
+# 两个数的和
+def add(x,y):
+    return x+y
+add = lambda x,y:x+y
+print(add(1,2))
 
-# dic={'k1':10,'k2':100,'k3':30}
+dic={'k1':10,'k2':100,'k3':30}
 # def func(key):
 #     return dic[key]
 # print(max(dic,key=func))   #根据返回值判断最大值，返回值最大的那个参数是结果
-# print(max(dic,key=lambda key:dic[key]))
-# max([1,2,3,4,5,-6,-7],key=abs)
+print(max(dic,key=lambda key:dic[key]))
+print(max([1,2,3,4,5,-6,-7],key=abs))
 
 # ret = map(abs,[-1,2,-3,4])
 # for i in ret:

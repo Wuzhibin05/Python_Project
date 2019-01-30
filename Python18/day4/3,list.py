@@ -9,9 +9,9 @@
 li = ['alex','wusir','egon','女神','taibai']
 
 #增加 append insert
-# li.append('日天')
-# li.append(1)
-# print(li)
+li.append('日天')
+li.append(1)
+print(li)
 # while 1:
 #     username = input('>>>')
 #     if username.strip().upper() == 'Q':
@@ -19,11 +19,11 @@ li = ['alex','wusir','egon','女神','taibai']
 #     else:
 #         li.append(username)
 # print(li)
-# li.insert(4,'春哥')
-# print(li)
-# li.extend('二哥')
-# li.extend([1,2,3])
-# print(li)
+li.insert(4,'春哥')
+print(li)
+li.extend('二哥')
+li.extend([1,2,3])
+print(li)
 
 #删
 li = ['taibai','alex','wusir','egon','女神',]
@@ -61,11 +61,11 @@ li = ['taibai','alex','wusir','egon','女神',]
 # print(num)
 # print(li.index('wusir'))
 # li = [1,5,4,7,6,2,3]
-# #正向排序
-# # li.sort()
-# # print(li)
-# #反向排序
-# # li.sort(reverse=True)
+# ## # li.sort()
+# # # print(li)
+# # #反向排序
+# # # li.sort(reverse=True)正向排序
+
 # # print(li)
 # #反转
 # li.reverse()
