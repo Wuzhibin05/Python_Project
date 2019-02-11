@@ -14,14 +14,12 @@
 #         print('是合法的手机号码')
 #     else:
 #         print('不是合法的手机号码')
-
-
-# import re
+import re
 # phone_number = input('please input your phone number ： ')
 # if re.match('^(13|14|15|18)[0-9]{9}$',phone_number):
-#         print('是合法的手机号码')
+#     print('是合法的手机号码')
 # else:
-#         print('不是合法的手机号码')
+#     print('不是合法的手机号码')
 
 
 # 绿茶 白茶 黄茶 青茶（乌龙茶） 红茶 黑茶
@@ -29,7 +27,6 @@
 # print(r'\\n')
 # print(r'\n')
 
-import re
 # findall
 # search
 # match
@@ -44,9 +41,9 @@ import re
 # 从前往后，找到一个就返回,返回的变量需要调用group才能拿到结果
 # 如果没有找到，那么返回None，调用group会报错
 
-# ret = re.match('[a-z]+', 'eva egon yuan')
-# if ret:
-#     print(ret.group())
+ret = re.match('[a-z]+', 'eva egon yuan')
+if ret:
+    print(ret.group())
 # match是从头开始匹配，如果正则规则从头开始可以匹配上，就返回一个变量。
 # 匹配的内容需要用group才能显示
 # 如果没匹配上，就返回None，调用group会报错
@@ -88,14 +85,19 @@ import re
 
 # import re
 #
-# ret = re.findall('www.(baidu|oldboy).com', 'www.oldboy.com')
-# print(ret)  # ['oldboy']     这是因为findall会优先把匹配结果组里内容返回,如果想要匹配结果,取消权限即可
-#
-# ret = re.findall('www.(?:baidu|oldboy).com', 'www.oldboy.com')
-# print(ret)  # ['www.oldboy.com']
+ret = re.findall('www.(baidu|oldboy).com', 'www.oldboy.com')
+print(ret)  # ['oldboy']     这是因为findall会优先把匹配结果组里内容返回,如果想要匹配结果,取消权限即可
 
-ret=re.split("\d+","eva3egon4yuan")
+ret = re.findall('www.(?:baidu|oldboy).com', 'www.baidu.com')
+print(ret)  # ['www.oldboy.com']
+
+ret=re.split("\d+","eva35egon466yuan")
 print(ret) #结果 ： ['eva', 'egon', 'yuan']
 
-ret=re.split("(\d+)","eva3egon4yuan")
+ret=re.split("(\d+)","eva35egon466yuan")
 print(ret) #结果 ： ['eva', '3', 'egon', '4', 'yuan']
+
+
+import psutil
+print(psutil.disk_usage("d:/"))
+print(type(psutil.disk_usage("d:/")))
