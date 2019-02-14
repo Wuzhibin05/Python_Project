@@ -30,4 +30,7 @@ import  os
 # print(os.getcwd())
 # print(os.path.getsize(os.path.join(os.getcwd(),'1.复习.py')))
 import os
-print(os.linesep)
+
+os.makedirs('dirname1/dirname2')
+# os.removedirs('dirname1')
+os.getcwd()

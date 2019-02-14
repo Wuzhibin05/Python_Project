@@ -12,49 +12,46 @@ import time
 # print(time.strftime("%m-%d %H:%M:%S"))  #year month day HOUR MINUTE SECOND
 # print(time.strftime("%H:%M:%S"))  #year month day HOUR MINUTE SECOND
 # print(time.strftime("%H:%M"))  #year month day HOUR MINUTE SECOND
-print(time.strftime("%Y/%m/%d %a %H:%M:%S"))
-print(time.localtime())
-print(time.time())
+# print(time.strftime("%Y/%m/%d %a %H:%M:%S"))
+# ret = time.localtime()
+# print(ret)
+# print(type(ret))
+# print(time.time())
 
 # struct_time = time.localtime()
 # print(struct_time)
 # print(struct_time.tm_year)
 
 import time
+
 # 时间戳和结构化时间
-# t = time.time()
-# print(t)
-# print(time.localtime(3000000000))
-# print(time.gmtime(t))
+ret = time.time()
+print(ret)
+ret1 = time.localtime(ret)
+print(time.gmtime(ret))
+print(ret1)
+ret2 = time.mktime(ret1)
+print(ret2)
 
-# print(time.mktime(time.localtime()))
+# 字符串时间和结构化时间转换。
 
-# print(time.strptime('2000-12.31','%Y-%m.%d'))
-# print(time.strftime('%m/%d/%Y %H:%M:%S',time.localtime(3000000000)))
+ret3 = time.localtime()
+print(ret3)
+ret4 = time.strftime("%Y-%m-%d %H:%M:%S",ret3)
+print(ret4)
+ret5 =time.strptime(ret4,"%Y-%m-%d %H:%M:%S")
+print(ret5)
 
-# print(time.asctime())
+# 结构化时间转固定格式的字符串时间 %a %b %d %H:%M:%S %Y串
 
+ret6 = time.localtime()
+print(time.asctime(ret6))
 
+# 时间戳转换固定格式字符串时间
 
-
-
-
-
-
-
-
-
-
-
-
+ret7 = time.time()
+print(time.ctime(ret7))
 
 
 
-
-# 张天福 —— 中国茶叶之父
-    # 陈味聪
-    # 周天霖
-# 绿茶 ： 龙井 碧螺春 竹叶青 信阳毛尖 六安瓜片 太平猴魁 安吉白茶
-# 白茶 ： 福鼎白茶 银针（100%芽） 白牡丹（一芽一叶） 贡眉（一芽两叶） 寿眉（一芽三叶）
-# 黄茶 ： 黄山毛峰 霍山黄芽
 
