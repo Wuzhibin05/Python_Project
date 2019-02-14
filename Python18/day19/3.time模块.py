@@ -12,7 +12,9 @@ import time
 # print(time.strftime("%m-%d %H:%M:%S"))  #year month day HOUR MINUTE SECOND
 # print(time.strftime("%H:%M:%S"))  #year month day HOUR MINUTE SECOND
 # print(time.strftime("%H:%M"))  #year month day HOUR MINUTE SECOND
-
+print(time.strftime("%Y/%m/%d %a %H:%M:%S"))
+print(time.localtime())
+print(time.time())
 
 # struct_time = time.localtime()
 # print(struct_time)

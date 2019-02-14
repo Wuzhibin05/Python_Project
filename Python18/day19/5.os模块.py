@@ -29,3 +29,5 @@ import  os
 # print(os.path.join(r'C:\Users\Administrator','user','local'))
 # print(os.getcwd())
 # print(os.path.getsize(os.path.join(os.getcwd(),'1.复习.py')))
+import os
+print(os.linesep)
