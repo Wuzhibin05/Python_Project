@@ -52,3 +52,6 @@ import time
 #                                           struct_time.tm_hour,struct_time.tm_min,struct_time.tm_sec))
 
 
+import sys
+ret2 = sys.path
+print(ret2)

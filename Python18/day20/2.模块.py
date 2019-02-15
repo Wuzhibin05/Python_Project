@@ -3,18 +3,18 @@
 # 自定义的
 
 # 文件
-# import demo
-# def read():
-#     print('my read func')
-# demo.read()
-# print(demo.money)
+import demo
+def read():
+    print('my read func')
+demo.read()
+print(demo.money)
 # 先从sys.modules里查看是否已经被导入
 # 如果没有被导入，就依据sys.path路径取寻找模块
 # 找到了就导入
 # 创建这个模块的命名空间
 # 执行文件，把文件中的名字都放到命名空间里
-# import sys
-# print(sys.modules.keys())
+import sys
+print(sys.modules.keys())
 # print(sys.path)
 
 # import time as t
