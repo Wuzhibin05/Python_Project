@@ -25,7 +25,7 @@ print(sys.path)
 # # print(sys.path)
 import glance
 glance.api.policy.get()
-glance.api.
+glance.api.versions.create_resource()
 # from dir import glance
 # glance.db.models.register_models('mysql')
 # glance.api.policy.get()
