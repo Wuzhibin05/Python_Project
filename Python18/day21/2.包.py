@@ -12,19 +12,20 @@
 # l.append(open('glance/cmd/manage.py','w'))
 # l.append(open('glance/db/models.py','w'))
 # map(lambda f:f.close() ,l)
+import sys
+import glance.api.policy as policy
+policy.get()
+print(sys.path)
 
-# import glance.api.policy as policy
-# policy.get()
-#
-# from dir.glance.api import policy
+# from glance.api import policy
 # policy.get()
 
 # import sys
 # sys.path.insert(0,'C:\\Users\\Administrator\\PycharmProjects\\s9\\day21\\dir')
 # # print(sys.path)
-# from glance.api import policy
-# policy.get()
-
+import glance
+glance.api.policy.get()
+glance.api.
 # from dir import glance
 # glance.db.models.register_models('mysql')
 # glance.api.policy.get()

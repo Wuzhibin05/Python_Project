@@ -19,14 +19,15 @@ def test():
         yield i
 
 g=test()
-# for n in [1,10,5]:
-#     g=(add(n,i) for i in g)
-n = 1
-g=(add(n,i) for i in test())
-n = 10
-g=(add(n,i) for i in (add(n,i) for i in test()))
-n = 5
-g=(15,16,17,18)
-
+for n in [1,10,5]:
+    g=(add(n,i) for i in g)
+# print(list(g))
+# n = 1
+# g=(add(n,i) for i in test())
+# n = 10
+# g=(add(n,i) for i in (add(n,i) for i in test()))
+# n = 5
+# g=(15,16,17,18)
+help(str)
 
 print(list(g))
