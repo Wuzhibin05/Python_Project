@@ -16,34 +16,35 @@
 # print(类名.属性)
 # 类名的作用 就是操作属性 查看属性
 
-# class Person:                 # 类名
-#     country = 'China'         # 创造了一个只要是这个类就一定有的属性
-#                                # 类属性 静态属性
-#     def __init__(self,*args):  # 初始化方法，self是对象，是一个必须传的参数
-#         # self就是一个可以存储很多属性的大字典
-#         self.name = args[0]   # 往字典里添加属性的方式发生了一些变化
-#         self.hp = args[1]
-#         self.aggr = args[2]
-#         self.sex = args[3]
-#
-#     def walk(self,n):         # 方法，一般情况下必须传self参数，且必须写在第一个
-#                               # 后面还可以传其他参数，是自由的
-#         print('%s走走走,走了%s步'%(self.name,n))
+class Person:                 # 类名
+    country = 'China'         # 创造了一个只要是这个类就一定有的属性
+                               # 类属性 静态属性
+    def __init__(self,*args):  # 初始化方法，self是对象，是一个必须传的参数
+        # self就是一个可以存储很多属性的大字典
+        self.name = args[0]   # 往字典里添加属性的方式发生了一些变化
+        self.hp = args[1]
+        self.aggr = args[2]
+        self.sex = args[3]
+
+    def walk(self,n):         # 方法，一般情况下必须传self参数，且必须写在第一个
+                              # 后面还可以传其他参数，是自由的
+        print('%s走走走,走了%s步'%(self.name,n))
+print(Person.country)
 #
 # # print(Person.country)        # 类名 可以查看类中的属性，不需要实例化就可以查看
-# alex = Person('狗剩儿',100,1,'不详')  # 类名还可以实例化对象，alex对象   # 实例化
-# # print(alex.__dict__) # 查看所有属性
-# print(alex.name)  # 查看属性值
-# # print(alex.hp)  # 查看属性值
-# alex.walk(5)    # Person.walk(alex，5)  # 调用方法 类名.方法名(对象名)
+alex = Person('狗剩儿',100,1,'不详')  # 类名还可以实例化对象，alex对象   # 实例化
+print(alex.__dict__) # 查看所有属性
+print(alex.name)  # 查看属性值
+print(alex.hp)  # 查看属性值
+alex.walk(5)    # Person.walk(alex，5)  # 调用方法 类名.方法名(对象名)
 
-# print(Person.__dict__['country'])
+print(Person.__dict__['country'])
 # Person.__dict__['country'] = '印度'
-# print(alex.__dict__['name'])
-# alex.__dict__['name'] = '二哥'
-# print(alex.__dict__)
-# print(alex.name)
-# print(alex.name)
+print(alex.__dict__['name'])
+alex.__dict__['name'] = '二哥'
+print(alex.__dict__)
+print(alex.name)
+print(alex.name)
 # alex.name = '二哥'
 # alex.__dict__['name'] = '二哥'
 # alex.age = 83

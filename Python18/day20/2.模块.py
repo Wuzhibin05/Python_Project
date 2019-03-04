@@ -3,18 +3,22 @@
 # 自定义的
 
 # 文件
+import sys
 import demo
 def read():
     print('my read func')
 demo.read()
 print(demo.money)
+for i in sys.modules:
+    if 'demo' in i:
+        print("yes",i)
 # 先从sys.modules里查看是否已经被导入
 # 如果没有被导入，就依据sys.path路径取寻找模块
 # 找到了就导入
 # 创建这个模块的命名空间
 # 执行文件，把文件中的名字都放到命名空间里
-import sys
-print(sys.modules.keys())
+# import sys
+# print(sys.modules.keys())
 # print(sys.path)
 
 # import time as t
@@ -31,10 +35,10 @@ print(sys.modules.keys())
 # # 增删改查
 # # 关闭数据库
 
-# import time,sys,os
+import time,sys,os
 
-# from time import sleep
-# from demo import read
+from time import sleep
+from demo import read
 # def read():
 #     print('my read')
 # read()
@@ -43,8 +47,8 @@ print(sys.modules.keys())
 # from demo import 变量名
 
 # from demo import money,read
-# # print(money)
-# # read()
+# print(money)
+# read()
 # money = 200
 # read()
 # from demo import money,read
@@ -52,22 +56,22 @@ print(sys.modules.keys())
 # # read()
 # money = 200
 # read()
-
+#
 # from time import *
 # # sleep = 10
 # sleep(1)
-
+#
 # from math import pi
 # print(pi)
 # pi = 3
 # print(pi)
-
+#
 # from demo import *
 # print(money)
 # read()
 
-# import demo
-# print(demo.money)
+import demo
+print(demo.money)
 
 # 所有的模块导入都应该尽量往上写
     # 内置模块
