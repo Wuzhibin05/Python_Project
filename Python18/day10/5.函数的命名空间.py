@@ -1,8 +1,25 @@
-# 函数进阶
-# a = 1
+# 函数内部没有值，取全局。
+# a = 1 #取的这里的值
 # def func():
 #     print(a)
 # func()
+#
+# # 内外都有值，取局部命名空间的。
+# b= 1
+# def func():
+#     b = 2 #取的这里的值
+#     print(b)
+# func()
+#
+# # 内外都有值，取局部命名空间的。
+# b= 1
+# def func():
+#     b = 2 #取的这里的值
+#     print(b)
+# func()
+
+
+
 
 # 命名空间和作用域
 # print()
@@ -25,21 +42,22 @@
 #在全局:可以使用内置命名空间中的名字，但是不能用局部中使用
 #在内置:不能使用局部和全局的名字的
 
+
 # def func():
 #     a = 1
 #
 # func()
 # print(a)
-
+#
 # def max(l):
 #     print('in max func')
 #
 # print(max([1,2,3]))
-#在正常情况下，直接使用内置的名字
-#当我们在全局定义了和内置名字空间中同名的名字时，会使用全局的名字
-#当我自己有的时候 我就不找我的上级要了
-#如果自己没有 就找上一级要 上一级没有再找上一级 如果内置的名字空间都没有 就报错
-# 多个函数应该拥有多个独立的局部名字空间，不互相共享
+# 如果内置的名字空间都没有 就报错
+# 多个函数应该拥有多个独立的局部名字空间，不互相共享在正常情况下，直接使用内置的名字
+# #当我们在全局定义了和内置名字空间中同名的名字时，会使用全局的名字
+# #当我自己有的时候 我就不找我的上级要了
+# #如果自己没有 就找上一级要 上一级没有再找上一级
 
 # def input():
 #     print('in input now')
@@ -61,40 +79,40 @@
 # 全局作用域 —— 作用在全局 —— 内置和全局名字空间中的名字都属于全局作用域  ——globals()
 # 局部作用域 —— 作用在局部 —— 函数（局部名字空间中的名字属于局部作用域） ——locals()
 
-# a = 1
-# def func():
-#     global a
-#     a = 2
-#
-# func()
-# print(a)
+a = 1
+def func():
+    global a
+    a = 2
+func()
+print(a)
 
 # 对于不可变数据类型 在局部可是查看全局作用域中的变量
 # 但是不能直接修改
 # 如果想要修改，需要在程序的一开始添加global声明
 # 如果在一个局部（函数）内声明了一个global变量，那么这个变量在局部的所有操作将对全局的变量有效
-# a = 1
-# b = 2
-# def func():
-#     x = 'aaa'
-#     y = 'bbb'
-#     print(locals())
-#     print(globals())
-#
-# func()
-# print(globals())
-# print(locals()) #本地的
+a = 1
+b = 2
+def func():
+    x = 'aaa'
+    y = 'bbb'
+    print(locals())
+    print(globals())
+
+func()
+print(globals())
+print(locals()) #本地的
 
 #globals 永远打印全局的名字
 #locals 输出什么 根据locals所在的位置
 
-# a = 1
-# def func(a):
-#     a = 2
-#     return a
-#
-# a = func(a)
-# print(a)
+a = 1
+def func(a):
+    a = 2
+    return a
+
+a = func(a)
+print(a)
+
 
 
 

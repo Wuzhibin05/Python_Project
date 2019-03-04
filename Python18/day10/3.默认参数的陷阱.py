@@ -1,6 +1,7 @@
 # 陷阱一：默认参数是一个空的列表
 def defult_param(a,l = []):
     l.append(a)
+    print(id(l))
     return l
 
 print(defult_param('alex'))
@@ -10,10 +11,11 @@ print(defult_param('egon'))
 def qqxing(k,l = {}):
     # l.append(1)
     l[k] = 'v'
+    print(id(l))
     print(l)
 
 qqxing(1)     #[1]
-qqxing(2)     #[1,1]
+qqxing(2,l={})     #[1,l = {}]
 qqxing(3)     #[1,1,1]
 
 # 如果默认参数的值是一个可变数据类型，

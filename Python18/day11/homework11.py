@@ -56,19 +56,29 @@ print(card())
 #     def inner():
 #         print(666)
 # wrapper()
-# 你可以任意添加代码,用两种或以上的方法,执行inner函数.
-
-# def wrapper():
-#     def inner():
+# 你
 #         print(666)
 #     return inner()
-# wrapper()
+# wrapper()可以任意添加代码,用两种或以上的方法,执行inner函数.
+# #
+# # # def wrapper():
+# # #     def inner():
+import time
+def wrapper(func):
+    def inner(*args,**kwargs):
+        start = time.time()
+        ret=func(*args,**kwargs)
+        end = time.time()
+        return ret
+    return inner
 
-def wrapper():
-    def inner():
-        print(666)
-    return inner()
-wrapper()
+
+@wrapper
+def func():
+    time.sleep(1)
+    print("In the func")
+    return "In the func"
+print(func())
 
 
 # 5，相关面试题（先从纸上写好答案，然后在运行）：
