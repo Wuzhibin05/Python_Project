@@ -9,18 +9,28 @@
 # hello'
 # -88.8
 # -/+5
-print("These are strings:","hello","","")
+'''操作符是+、 −、 *和/。值是'hello'、 −88.8 和 5。'''
 
 # Q: 2. Which of the following is a variable, and which is a string?
 # spam
 # 'spam'
+'''变量用‘’括起来，变量是spam'''
+
 # Q: 3. Name three data types.
+''' int,str,tuple,dict,list'''
+
 # Q: 4. What is an expression made up of? What do all expressions do?
+'''表达式是值和操作符的结合。所有表达式都求值为（即归约为）一个值。'''
+
 # Q: 5. This chapter introduced assignment statements, like spam = 10. What is the difference between an expression
 # and a statement?
+'''表达式求值为一个值。语句不是这样。'''
+
 # Q: 6. What does the variable bacon contain after the following code runs?
 # bacon = 20
 # bacon + 1
+'''20 因为bacon内存地址的值没有发生变化。如果需要改变使用bacon +=1'''
+
 # Q: 7. What should the following two expressions evaluate to?
 # 'spam' + 'spamspam'
 # 'spam' * 3

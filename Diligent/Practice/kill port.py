@@ -11,7 +11,7 @@ def killport(port):
     find_port= 'netstat -aon | findstr 0.0.0.0:%s' % port
     result = os.popen(find_port)
     text = result.read()
-    print text
+    print (text)
     pid= text [-6:-1]
     # 占用端口的pid
     find_kill= 'taskkill -f -pid %s' %pid
