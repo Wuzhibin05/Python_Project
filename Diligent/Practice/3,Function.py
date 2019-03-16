@@ -43,11 +43,42 @@
 # 16
 # 8 4 2 1
 '''
+
+# def collatz(number):
+#     if number%2 == 0:
+#         result = number // 2
+#     else:
+#         result = 3*number+1
+#     print(result)
+#     return  result
+#
+# while True:
+#     number = input("请输入一个整数>>")
+#     if number.isdigit():
+#         collatz(int(number))
+#     else:
+#         print("您的输入不合法，请重新输入。")
+
+#### 3.11.2 输入验证
+
+''' 在前面的项目中添加 try 和 except 语句，检测用户是否输入了一个非整数的字
+符串。正常情况下， int()函数在传入一个非整数字符串时，会产生 ValueError 错误，
+比如 int('puppy')。在 except 子句中，向用户输出一条信息，告诉他们必须输入一个
+整数 '''
+
 def collatz(number):
     if number%2 == 0:
-        return number // 2
+        result = number // 2
     else:
-        return  3*number+1
+        result = 3*number+1
+    print(result)
+    return  result
 
 while True:
-
+    number = input("请输入一个整数>>")
+    try :
+        int(number)
+    except ValueError:
+        print("您输入的内容不合法，请重新输入！")
+        continue
+    collatz(int(number))
